@@ -21,4 +21,17 @@ export default createGlobalStyle`
         background: ${({ theme }) => theme.colors.background} fixed center; 
         color: ${({ theme }) => theme.colors.title};
     }
+
+    .container {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            padding: 0 16px 32px 16px;
+        }
+    }
 `;

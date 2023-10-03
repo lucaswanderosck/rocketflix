@@ -7,8 +7,11 @@ type Props = {
 
 export const Button = ({ children, icon }: Props) => {
   return (
-    <Container type="button">
-      {icon} {children}
+    <Container type="button" role="button">
+      <span>
+        {icon}
+        {children}
+      </span>
     </Container>
   );
 };

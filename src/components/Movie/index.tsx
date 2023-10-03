@@ -1,17 +1,17 @@
-import { Container } from "./styles";
+import { Avaliacao, Container } from "./styles";
 
-type Props = {
-  title: string;
-  movieTitle: string;
-};
+// type Props = {};
 
-export const Movie = ({ title, movieTitle }: Props) => {
+export const Movie = () => {
   return (
     <Container>
-      <h1>{title}</h1>
+      <img
+        src="https://www.themoviedb.org/t/p/w220_and_h330_face/4CwKj1fw33BXYzxvrpM3GlAhK4L.jpg"
+        alt=""
+      />
+      <Avaliacao>83 <span>%</span></Avaliacao>
       <div>
-        <img src="pla" alt="" />
-        <h2>{movieTitle}</h2>
+        <h2>Homem-Aranha: Através do Aranhaverso</h2>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
           minima quia, porro facilis, nostrum labore repellendus laboriosam,
