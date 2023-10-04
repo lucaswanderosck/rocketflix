@@ -7,6 +7,8 @@ export const Container = styled.div`
 
   > img {
     width: 168px;
+    height: 252px;
+    object-fit: cover;
     margin-right: 32px;
     border-radius: 8px;
   }
@@ -21,6 +23,17 @@ export const Container = styled.div`
     > p {
       font-size: 14px;
       color: ${({ theme }) => theme.colors.subtitle};
+
+      ~ div {
+        margin-top: 8px;
+        display: flex;
+        font-size: 12px;
+
+        > p {
+          display: flex;
+          align-items: center;
+        }
+      }
     }
   }
 
@@ -60,4 +73,10 @@ export const Avaliacao = styled.span`
     bottom: 224px;
     left: 82px;
   }
+`;
+
+export const Generos = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
 `;
