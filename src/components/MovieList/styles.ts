@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   margin-top: 32px;
+`;
+
+export const MovieLogo = styled.div`
   position: relative;
 
   > img {
@@ -13,70 +16,57 @@ export const Container = styled.div`
     border-radius: 8px;
   }
 
-  > div {
-    > h2 {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    > p {
-      font-size: 14px;
-      color: ${({ theme }) => theme.colors.subtitle};
-
-      ~ div {
-        margin-top: 8px;
-        display: flex;
-        font-size: 12px;
-
-        > p {
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    display: block;
-    text-align: center;
-
-    > img {
-      margin-bottom: 16px;
-    }
-  }
-`;
-
-export const Avaliacao = styled.span`
-  background-color: #102d70;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  outline: 2px solid #ccc;
-  outline-offset: -4px;
-  position: absolute;
-  bottom: -20px;
-  left: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  font-weight: bold;
-
   > span {
-    font-size: 6px;
-    font-weight: normal;
-    margin-bottom: 4px;
-  }
+    position: absolute;
+    bottom: -12px;
+    left: 8px;
+    width: 40px;
+    height: 40px;
+    background-color: #102d70;
+    outline: 2px solid #ccc;
+    outline-offset: -4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
 
-  @media (max-width: 768px) {
-    bottom: 224px;
-    left: 82px;
+    > span {
+      font-size: 6px;
+      font-weight: normal;
+      margin-bottom: 4px;
+    }
   }
 `;
 
-export const Generos = styled.div`
+export const MovieDetails = styled.div``;
+
+export const MovieDescription = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.subtitle};
+`;
+
+export const MovieTitle = styled.h2`
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+`;
+
+export const MovieInfos = styled.ul`
   display: flex;
   align-items: center;
-  margin-left: 16px;
+  margin-top: 8px;
+  font-size: 12px;
+
+  > li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+
+    > svg {
+      margin-right: 4px;
+    }
+  }
 `;
