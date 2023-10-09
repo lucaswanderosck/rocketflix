@@ -14,5 +14,7 @@ export type MovieInfos = {
   vote_average: number;
   release_date: string;
   runtime: number;
+  tagline: string;
+  homepage: string;
   genres: Genre[];
 };

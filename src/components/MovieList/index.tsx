@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import * as Fx from "../../data/functions";
 import { MovieInfos } from "../../data/@types";
+
 import { BiSolidTimeFive, BiSolidStar, BiSolidMovie } from "react-icons/bi";
 
 type Props = {
@@ -36,10 +37,11 @@ export const MovieList = ({ movie }: Props) => {
             {Fx.getMovieGenres(movie.genres)}
           </li>
           <li>
-            <BiSolidTimeFive size={20} color="#c1c1c1" />
+            <BiSolidTimeFive size={20} color="#aaa" />
             {Fx.convertMinToHrs(movie.runtime)}
           </li>
         </S.MovieInfos>
+        {movie.homepage && <a href={movie.homepage} target="blank">homepage</a>}
       </S.MovieDetails>
     </S.Container>
   );
