@@ -45,12 +45,21 @@ export const MovieDetails = styled.div``;
 export const MovieDescription = styled.p`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.subtitle};
+  margin-top: 12px;
 `;
 
 export const MovieTitle = styled.h2`
+  color: ${({ theme }) => theme.colors.title};
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 12px;
+
+  ${({ as }) =>
+    as === "a" &&
+    `
+    &:hover {
+      text-decoration: underline;
+    }
+  `}
 `;
 
 export const MovieInfos = styled.ul`

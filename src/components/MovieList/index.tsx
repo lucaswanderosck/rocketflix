@@ -23,7 +23,14 @@ export const MovieList = ({ movie }: Props) => {
       </S.MovieLogo>
 
       <S.MovieDetails>
-        <S.MovieTitle>{movie.title}</S.MovieTitle>
+        {movie.homepage ? (
+          <S.MovieTitle as="a" href={movie.homepage} target="_blank">
+            {movie.title}
+          </S.MovieTitle>
+        ) : (
+          <S.MovieTitle>{movie.title}</S.MovieTitle>
+        )}
+
         <S.MovieDescription>
           {Fx.lowerOverview(movie.overview)}
         </S.MovieDescription>
@@ -41,7 +48,6 @@ export const MovieList = ({ movie }: Props) => {
             {Fx.convertMinToHrs(movie.runtime)}
           </li>
         </S.MovieInfos>
-        {movie.homepage && <a href={movie.homepage} target="blank">homepage</a>}
       </S.MovieDetails>
     </S.Container>
   );

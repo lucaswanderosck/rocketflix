@@ -21,8 +21,8 @@ export const App = () => {
       setIsLoading(true);
 
       const response = await api.get(
-        // 'movie/popular?api_key=fc229917830e1f3d059007efb9649b95&page=1'
-        "account/20503458/favorite/movies?api_key=fc229917830e1f3d059007efb9649b95&page=1&sort_by=created_at.asc"
+        'movie/popular?api_key=fc229917830e1f3d059007efb9649b95&page=1'
+        // "account/20503458/favorite/movies?api_key=fc229917830e1f3d059007efb9649b95&page=1&sort_by=created_at.asc"
       );
 
       const randomIndex = Math.floor(
