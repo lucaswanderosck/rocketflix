@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   margin-top: 32px;
+
+  @media (max-width: 768px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const MovieLogo = styled.div`
@@ -14,6 +19,13 @@ export const MovieLogo = styled.div`
     object-fit: cover;
     margin-right: 32px;
     border-radius: 8px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      object-fit: contain;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   > span {
@@ -36,6 +48,11 @@ export const MovieLogo = styled.div`
       font-size: 6px;
       font-weight: normal;
       margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      left: 100px;
+      bottom: 4px;
     }
   }
 `;
@@ -77,5 +94,10 @@ export const MovieInfos = styled.ul`
     > svg {
       margin-right: 4px;
     }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 16px;
+    justify-content: center;
   }
 `;
