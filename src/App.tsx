@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 import { MovieId, MovieInfos } from "./data/@types";
 import { api } from "./data/api";
 
+import { Button } from "./components/Button";
 import { Header } from "./components/Header";
 import { MovieList } from "./components/MovieList";
-import { Button } from "./components/Button";
 
 import { Dna } from "react-loader-spinner";
 import shuffleIcon from "./assets/shuffle.svg";
@@ -38,22 +38,22 @@ export const App = () => {
   };
 
   useEffect(() => {
+    const fetchMovieInfos = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/movie/${movieIdState?.id}?api_key=fc229917830e1f3d059007efb9649b95&language=pt-BR&page=1`
+        );
+        const infos: MovieInfos = response.data;
+        setMovieInfos(infos);
+      } catch (error) {
+        console.error("Erro ao buscar filme:", error);
+      }
+    };
+
     if (movieIdState) {
       fetchMovieInfos();
     }
   }, [movieIdState]);
-
-  const fetchMovieInfos = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieIdState?.id}?api_key=fc229917830e1f3d059007efb9649b95&language=pt-BR&page=1`
-      );
-      const infos: MovieInfos = response.data;
-      setMovieInfos(infos);
-    } catch (error) {
-      console.error("Erro ao buscar filme:", error);
-    }
-  };
 
   return (
     <div className="container">
