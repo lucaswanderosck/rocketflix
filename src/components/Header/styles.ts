@@ -1,24 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.header`
-  margin-top: 96px;
   text-align: center;
 
-  h1 > {
-    font-size: 40px;
+  h1 {
+    font-size: 2.5rem;
     font-weight: bold;
   }
 
-  > img {
-    width: 86px;
-    margin-bottom: 8px;
+  img {
+    width: 6rem;
+    margin-bottom: 0.25rem;
   }
-
-  @media (max-width: 768px) {
-    margin-top: 32px;
-
-    h1 {
-      font-size: 32px;
-    }
-  }
-`;
+`

@@ -1,12 +1,14 @@
-import { Container } from "./styles";
+import React from 'react'
+import shuffleIcon from '../../assets/shuffle.svg'
+import { Container } from './styles'
 
-import shuffleIcon from "../../assets/shuffle.svg";
+interface Props extends React.HTMLAttributes<HTMLElement> {}
 
-export const Header = () => {
+export const Header: React.FC<Props> = ({ ...props }) => {
   return (
-    <Container>
+    <Container {...props}>
       <img src={shuffleIcon} alt="shuffle Logo" />
       <h1>Não sabe o que assistir?</h1>
     </Container>
-  );
-};
+  )
+}
