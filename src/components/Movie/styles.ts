@@ -52,30 +52,32 @@ export const Rating = styled.span`
   }
 `
 
-export const MovieDescription = styled.p`
+export const MovieOverview = styled.p`
   font-size: 0.875rem;
   color: ${({ theme }) => theme.subtitle};
   margin-top: 0.75rem;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
 `
 
-export const MovieName = styled.h2`
+export const MovieName = styled.a`
   color: ${({ theme }) => theme.title};
   font-size: 1.25rem;
   font-weight: bold;
+  cursor: pointer;
 
-  ${({ as }) =>
-    as === 'a' &&
-    `
-    &:hover {
-      text-decoration: underline;
-    }
-  `}
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 export const MovieInfos = styled.ul`
   display: flex;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 0.75rem;
   font-size: 0.75rem;
 
   li {
