@@ -33,7 +33,7 @@ export const MovieContext = React.createContext<MovieContextData>(
   {} as MovieContextData,
 )
 
-const accountId = import.meta.env.VITE_ACCOUNT_ID
+// const accountId = import.meta.env.VITE_ACCOUNT_ID
 
 export const MovieProvider: React.FC<Props> = ({ children }) => {
   const [movies, setMovies] = React.useState<MovieI>({} as MovieI)
@@ -44,7 +44,8 @@ export const MovieProvider: React.FC<Props> = ({ children }) => {
       setIsLoading(true)
 
       await new Promise((resolve) => setTimeout(resolve, 1000))
-      const response = await api.get(`account/${accountId}/favorite/movies`)
+      // const response = await api.get(`account/${accountId}/favorite/movies`)
+      const response = await api.get('movie/popular')
       const data = response.data.results
 
       const randomIndex = Math.floor(Math.random() * data.length)
