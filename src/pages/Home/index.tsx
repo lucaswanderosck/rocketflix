@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
-import { Loader } from '../../components/Loader'
 import { Movie } from '../../components/Movie'
+import { Skeleton } from '../../components/Skeleton'
 import { MovieContext } from '../../contexts/MovieContext'
 import { MainContainer } from './styles'
 
@@ -16,7 +16,7 @@ export const Home: React.FC = () => {
   return (
     <MainContainer>
       <Header />
-      {isLoading ? <Loader /> : <Movie movie={movies} />}
+      {isLoading ? <Skeleton /> : <Movie movie={movies} />}
       <Button onClick={handleFindMovieClick} />
     </MainContainer>
   )

@@ -50,7 +50,6 @@ export const MovieProvider: React.FC<Props> = ({ children }) => {
 
       const randomIndex = Math.floor(Math.random() * data.length)
       const randomMovie = data[randomIndex]
-      console.log(randomIndex)
 
       const movieDetailsResponse = await api.get(`movie/${randomMovie.id}`)
       setMovies(movieDetailsResponse.data)
